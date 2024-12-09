@@ -1,0 +1,8 @@
+.Comment .comment_write_section > textarea {
+  resize: none;
+}
+
+.Comment .button_section {
+  display: flex;
+  justify-content: flex-end;
+}

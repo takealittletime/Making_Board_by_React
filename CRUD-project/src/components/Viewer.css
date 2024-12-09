@@ -1,0 +1,16 @@
+.Viewer .content_p {
+  background-color: rgb(236, 236, 236);
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  white-space: pre-line;
+}
+
+.Viewer .content_section {
+  border-bottom: 1px solid rgb(236,236,236);
+}
+
+.comment_write_section > textarea {
+  width: 100%;
+  box-sizing: border-box;
+}

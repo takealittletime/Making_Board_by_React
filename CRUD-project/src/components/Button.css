@@ -1,0 +1,27 @@
+.Button {
+  margin: 10px;
+  padding: 10px;
+  background-color: rgb(236,236,236);
+  border:none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.Button_main {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.Button_post {
+  background-color: rgb(100, 201, 100);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.Button_cancel {
+  background-color: indianred;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}

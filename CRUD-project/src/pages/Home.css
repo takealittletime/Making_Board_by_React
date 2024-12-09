@@ -1,0 +1,14 @@
+/* .Home {
+  background-color: white;
+  min-height: 100vh;
+} */
+
+.menu-bar {
+  display: flex;
+  border-bottom: 1px solid rgb(236, 236, 236);
+}
+
+.menu-bar > button {
+  flex: 1;
+  gap: 10px;
+}

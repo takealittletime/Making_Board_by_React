@@ -1,0 +1,35 @@
+.PostsItem {
+  display: flex;
+  gap: 15px;
+  border-bottom: 1px solid rgb(236, 236, 236);
+  margin-bottom: 20px;
+}
+
+.PostsItem .info_section {
+  margin-left: 20px;
+  flex: 1;
+  cursor: pointer;
+}
+
+.title {
+  color: dodgerblue;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.created_date {
+  font-size: 14px;
+}
+
+.content {
+  padding: 10px 10px;
+  margin: 5px;
+  background-color: rgb(236, 236, 236);
+  border-radius: 5px;
+  white-space: pre-line;
+}
+
+.button_section {
+  vertical-align: middle;
+  align-items: center;
+}
