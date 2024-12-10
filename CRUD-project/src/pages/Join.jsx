@@ -3,10 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import './Join.css'
 import Header from "../components/Header";
 import Button from "../components/Button";
+import usePageTitle from "../hooks/usePageTitle"
 
 
 const Join = ()=>{
   const nav = useNavigate();
+
+  usePageTitle("회원가입");
 
   return (
     <div className="Join">
@@ -22,6 +25,8 @@ const Join = ()=>{
         <h4>아이디</h4>
         <input type="text" placeholder="ID"></input>
         <h4>비밀번호</h4>
+        <input type="password" placeholder="PW"></input>
+        <h4>비밀번호 확인</h4>
         <input type="password" placeholder="PW"></input>
       </section>
       <section className="button_section">

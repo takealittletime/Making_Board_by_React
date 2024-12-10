@@ -52,11 +52,22 @@ export const PostDispatchContext = createContext();
 
 function App() {
   // mockData 셋업
+  // 1. 작성글 데이터
   localStorage.setItem('posts',JSON.stringify(  
       [
-        {id: 0, title:"여기에 글 제목이 들어간다.", createdDate: new Date().toLocaleDateString(),content:"여기에\n글 내용 작성...\n"},
+        {id: 2, title:"여기에 글 제목이 들어간다.", createdDate: new Date().toLocaleDateString(),content:"여기에\n글 내용 작성...\n"},
         {id: 1, title:"이 데이터는 목업이다.", createdDate: new Date().toLocaleDateString(),content:"목업 데이터는\n로컬 스토리지에 저장하였다."},
-        {id: 2, title:"React로 게시판 작성하기!", createdDate: new Date().toLocaleDateString(),content:"React를 이용했다."},
+        {id: 0, title:"React로 게시판 작성하기!", createdDate: new Date().toLocaleDateString(),content:"React를 이용했다."},
+      ]
+    )
+  );
+
+  // 2. 회원 데이터
+  localStorage.setItem('members',JSON.stringify(  
+      [
+        {num: 2, id:"tmp2", pw: "password02",name:"목업 회원02"},
+        {num: 1, id:"tmp1", pw: "password01",name:"목업 회원01"},
+        {num: 0, id:"admin", pw: "admin1234",name:"관리자"},
       ]
     )
   );
@@ -66,10 +77,12 @@ function App() {
   const idRef = useRef(3);
 
   useEffect(()=>{
+    // post 데이터 불러오기
     // 예외처리 1. storedData가 없는 경우
     const storedData = localStorage.getItem('posts')
     if (!storedData){
       setIsLoading(false);
+      console.log("ERROR: There is no storedData.");
       return;
     }
 
@@ -77,6 +90,7 @@ function App() {
     const parsedData = JSON.parse(storedData);
     if (!Array.isArray(parsedData)){
       setIsLoading(false);
+      console.log("ERROR:storedData is not an Array.");
       return;
     }
 
@@ -100,7 +114,6 @@ function App() {
 
   // 새로운 글 추가
   const onCreate = (title, createdDate, content)=>{
-    console.log("onCreate parameters:", { title, createdDate, content });
     dispatch({
       type: 'CREATE',
       data: {

@@ -5,10 +5,13 @@ import Viewer from '../components/Viewer';
 import usePosts from '../hooks/usePosts';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import usePageTitle from "../hooks/usePageTitle"
+
 
 const Posts = ()=>{
   const params = useParams();
   const nav = useNavigate();
+  usePageTitle(`${params.id}번 글 읽기`)
 
   const curPostsItem = usePosts(params.id);
 

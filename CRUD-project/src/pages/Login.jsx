@@ -3,9 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import './Login.css'
 import Header from '../components/Header';
 import Button from "../components/Button";
+import usePageTitle from '../hooks/usePageTitle';
 
 const Login = ()=>{
   const nav = useNavigate();
+
+  usePageTitle('로그인');
 
   return (
     <div className="Login">

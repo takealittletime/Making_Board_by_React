@@ -6,10 +6,13 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from 'react';
 import Editor from '../components/Editor';
 import { PostDispatchContext } from '../App';
+import usePageTitle from '../hooks/usePageTitle';
 
 const New = () => {
   const { onCreate } = useContext(PostDispatchContext);
   const nav = useNavigate();
+
+  usePageTitle('글 쓰기');
 
   const onSubmit = (input) => {
     onCreate(
